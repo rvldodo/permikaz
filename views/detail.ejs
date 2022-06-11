@@ -38,10 +38,10 @@
             <a href="/info"
               ><button type="button" class="btn btn-secondary">Back</button></a
             >
-            <a href="#"
+            <a href="/update/<%= data._id %>" data-method="post"
               ><button type="button" class="btn btn-primary">Update</button></a
             >
-            <a href="/info/delete/<%= data._id %>" data-method="delete"
+            <a href="/detail/delete/<%= data._id %>" data-method="delete"
               ><button
                 type="button"
                 class="delete-btn btn btn-danger"

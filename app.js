@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 
 const homeRoutes = require("./routes/homeRoutes");
+const aboutRoutes = require("./routes/aboutRoutes");
 const reportRoutes = require("./routes/reportRoutes");
 const infoRouter = require("./routes/infoRouter");
+const detailRouter = require("./routes/detailRouter");
+const updateRoutes = require("./routes/updateRoutes");
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,8 +24,17 @@ app.use(express.urlencoded({ extended: true }));
 // home
 app.use("/", homeRoutes);
 
+// about
+app.use("/about", aboutRoutes);
+
 // report
 app.use("/report", reportRoutes);
 
 // info
 app.use("/info", infoRouter);
+
+// detail
+app.use("/detail", detailRouter);
+
+// update data
+app.use("/update", updateRoutes);
