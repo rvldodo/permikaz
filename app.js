@@ -7,6 +7,8 @@ const reportRoutes = require("./routes/reportRoutes");
 const infoRouter = require("./routes/infoRouter");
 const detailRouter = require("./routes/detailRouter");
 const updateRoutes = require("./routes/updateRoutes");
+const loginRouter = require("./routes/loginRouter");
+const registerRouter = require("./routes/registerRouter");
 
 const PORT = process.env.PORT || 3000;
 
@@ -38,3 +40,9 @@ app.use("/detail", detailRouter);
 
 // update data
 app.use("/update", updateRoutes);
+
+// Logins
+app.use("/login", loginRouter);
+
+// register
+app.use("/register", registerRouter);
