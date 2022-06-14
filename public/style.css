@@ -24,7 +24,7 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 32rem;
+  height: 35rem;
 }
 
 /* MARKETING CONTENT
@@ -46,8 +46,8 @@ body {
     ------------------------- */
 
 .featurette-divider {
-  margin: 1rem 0; /* Space out the Bootstrap <hr> more */
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
 }
 
 /* Thin out the marketing headings */
@@ -234,4 +234,10 @@ body {
 
 .container-marketing {
   padding-top: 5rem;
+}
+
+/* nav */
+.banner-image {
+  background-image: url("img/banner-img.jpg");
+  background-size: cover;
 }

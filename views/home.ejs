@@ -2,9 +2,16 @@
 <html lang="en">
   <%- include('./partials/head.ejs') %>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-image: url("/img/bg2.jpg");
+      background-attachment: fixed;
+      padding-top: 0;
+    }
+  </style>
   <body>
     <%- include('./partials/nav.ejs') %>
-    <div class="container-carousel">
+    <div class="container-carousel" style="height: 500%">
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button
@@ -30,21 +37,17 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <svg
-              class="bd-placeholder-img"
+            <img
+              src="/img/register.jpg"
+              class="img-responsive"
+              alt="register"
               width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
+              height="mx-auto"
+            />
 
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>Example headline.</h1>
+                <h1>Register yourself in PERMIKAZ</h1>
                 <p>
                   Some representative placeholder content for the first slide of
                   the carousel.
@@ -58,40 +61,38 @@
             </div>
           </div>
           <div class="carousel-item">
-            <svg
-              class="bd-placeholder-img"
+            <img
+              src="/img/kazan3.jpg"
+              class="img-responsive"
+              alt="register"
               width="100%"
               height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
+            />
 
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
+                <h1>Visit Kazan?</h1>
                 <p>
-                  Some representative placeholder content for the second slide
-                  of the carousel.
+                  Everything you need to know about kazan is here. From uniques
+                  places, foods until step-by-step first time you come to Kazan.
+                  Download the guideline below.
                 </p>
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="http://drive.google.com/uc?export=download&id=1w1sxD7AZP9qFu8Pl-95PxM0FAFP23r9i"
+                  >Download</a
+                >
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <svg
-              class="bd-placeholder-img"
+            <img
+              src="/img/important-user.jpg"
+              class="img-responsive"
+              alt="register"
               width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect width="100%" height="100%" fill="#777" />
-            </svg>
+              height="mx-auto"
+            />
 
             <div class="container">
               <div class="carousel-caption text-end">
@@ -127,38 +128,42 @@
         </button>
       </div>
     </div>
-    <hr class="featurette-divider" />
     <div class="container-marketing">
       <div class="container marketing">
         <div class="row featurette">
-          <div class="col-md-7 pl-10">
+          <div class="col-md-7 pl-10 text-light">
             <h2 class="featurette-heading fw-normal lh-1">
-              First featurette heading.
-              <span class="text-muted">It’ll blow your mind.</span>
+              Tatarstan Republic,
+              <span class="text-light">Russia</span>
             </h2>
-            <p class="lead">
-              Some great placeholder content for the first featurette here.
-              Imagine some exciting prose here.
+            <p class="lead text-light">
+              Tatarstan, also called Tatariya, republic in the east-central part
+              of European Russia. The republic lies in the middle Volga River
+              basin around the confluence of the Volga and Kama rivers. Kazan
+              (q.v.) is the capital. The Volga flows north-south across the
+              western end of the republic, while the Kama, the Volga’s largest
+              tributary, forms a roughly east-west axis through the greater
+              part. The Vyatka and the Belaya rivers are major tributaries of
+              the Kama. Generally the relief is that of a low, rolling plain.
+              The area west of the Volga rises to 771 feet (235 m), representing
+              the extreme northern end of the Volga Upland. In the east the land
+              rises to the Urals foreland. The climate is continental, with
+              long, severe winters and hot summers. Annual rainfall is about
+              17–20 inches (420–510 mm), with a summer maximum.
             </p>
           </div>
-          <div class="col-md-5">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#eee" />
-              <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-            </svg>
+          <div class="col-md-5 pb-10">
+            <img
+              src="/img/kazan1.jpg"
+              class="img-responsive shadow"
+              alt="register"
+              width="mx-auto"
+              height="700"
+              x="50%"
+              y="50%"
+            />
           </div>
         </div>
-        <%- include('./partials/footer.ejs') %>
       </div>
     </div>
     <script
