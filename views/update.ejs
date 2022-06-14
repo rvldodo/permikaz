@@ -11,7 +11,10 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
-  background-color: #e0e0e0e0;
+  background-image: url("/img/bg3.jpg");
+  background-attachment: fixed;
+  background-position: 10%;
+  background-size: cover;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -244,17 +247,10 @@ body {
   </style>
   <body>
     <%- include('./partials/nav.ejs') %>
-    <!-- Cards -->
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
     <!-- Form -->
     <form action="/update/<%= data._id %>" method="post">
       <div class="container-form">
-        <div class="form">
+        <div class="form text-light">
           <div class="mb-3">
             <label for="first-name" class="form-label">First Name</label>
             <input
@@ -294,14 +290,19 @@ body {
           </div>
           <div class="mb-3">
             <label for="university" class="form-label">University</label>
-            <input
-              type="university"
-              class="form-control"
-              placeholder="university"
-              name="university"
-              value="<%= data.university %> "
-              required
-            />
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">University</label>
+              <select class="form-select" id="inputGroupSelect01" required name="university">
+                <option value="1">Kazan State University (КФУ)</option>
+                <option value="2">Kazan National Technical Research University (КНИТУ-КХТИ)</option>
+                <option value="3">Kazan State Medical University (КГМУ)</option>
+                <option value="4">Kazan Aviation Institute (КНИТУ-КАИ)</option>
+                <option value="5">Kazan State University Of Culture And Arts (КазГИК)</option>
+                <option value="6">Kazan State University Of Architecture And Engineering (КГСУ)</option>
+                <option value="7">Kazan State Power Engineering University (КГЭУ)</option>
+                <option value="8">Innopolis University</option>
+              </select>
+          </div>
           </div>
           <div class="mb-3">
             <label for="major" class="form-label">Major</label>
@@ -341,7 +342,6 @@ body {
         </div>
       </div>
     </form>
-    <%- include('./partials/footer.ejs') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
   </body>

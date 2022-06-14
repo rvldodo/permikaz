@@ -16,14 +16,27 @@ router.post("/", async (req, res) => {
   );
   const duplicates = dataFetch.rows;
 
-  // check the username
+  // check the duplicates
   if (duplicates.length > 0) {
     console.log("USER ALREADY EXISTS");
     res.redirect("/register");
     return;
   }
 
-  // compare the password
+  // check the first and last name
+  if (
+    duplicates.first_name === firstName &&
+    duplicates.last_name === lastName
+  ) {
+    console.log("USER ALREADY EXISTS");
+    res.redirect("/register");
+  }
+
+  // check the username
+  if (duplicates.user_name === username) {
+    console.log("USER ALREADY EXISTS");
+    res.redirect("/register");
+  }
 
   //hashing the password
   const hashPassword = await bcrypt.hash(password, 10);
@@ -33,7 +46,7 @@ router.post("/", async (req, res) => {
       "INSERT INTO user_permikaz (first_name, last_name, user_name, hash_password) VALUES ($1, $2, $3, $4)",
       [firstName, lastName, username, hashPassword]
     );
-    res.redirect("/report");
+    res.redirect("/login");
   } catch (error) {
     console.log(error);
   }

@@ -33,7 +33,7 @@ const postController = async (req, res) => {
         year,
       ]
     );
-    res.redirect("/info");
+    res.render("successReport");
   } catch (error) {
     console.error(error);
   }

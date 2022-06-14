@@ -18,3 +18,9 @@ CREATE TABLE user_permikaz(
     user_name VARCHAR(50),
     hash_password VARCHAR(225)
 );
+
+CREATE TABLE admin_permikaz(
+    user_name VARCHAR(50),
+    hash_password VARCHAR(225),
+    token VARCHAR(100)
+);

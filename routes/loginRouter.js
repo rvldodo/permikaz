@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
       data.user_name === username &&
       (await bcrypt.compare(password, data.hash_password))
     ) {
-      res.redirect("/info");
+      res.redirect("/report");
     }
   } catch (error) {
     res.redirect("/login");

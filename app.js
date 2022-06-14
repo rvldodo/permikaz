@@ -13,6 +13,7 @@ const detailRouter = require("./routes/detailRouter");
 const updateRoutes = require("./routes/updateRoutes");
 const loginRouter = require("./routes/loginRouter");
 const registerRouter = require("./routes/registerRouter");
+const loginAdminRouter = require("./routes/loginAdminRouter");
 
 const PORT = process.env.PORT || 3000;
 
@@ -65,3 +66,6 @@ app.use("/login", loginRouter);
 
 // register
 app.use("/register", registerRouter);
+
+// loginAdmin
+app.use("/loginAdmin", loginAdminRouter);
