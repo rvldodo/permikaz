@@ -1,5 +1,9 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const flash = require("connect-flash");
+const cookieParser = require("cookie-parser");
 
 const homeRoutes = require("./routes/homeRoutes");
 const aboutRoutes = require("./routes/aboutRoutes");
@@ -16,12 +20,27 @@ app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
-// middleware
-app.use(express.json());
+// set engine
 app.set("view engine", "ejs");
 
+// set static
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
+
+//parse JSON data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// set cookieParser, session and flash
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: { maxAge: 60000 },
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use(flash());
 
 // home
 app.use("/", homeRoutes);

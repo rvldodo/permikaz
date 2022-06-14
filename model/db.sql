@@ -16,5 +16,5 @@ CREATE TABLE user_permikaz(
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     user_name VARCHAR(50),
-    hash_password VARCHAR(50)
+    hash_password VARCHAR(225)
 );
