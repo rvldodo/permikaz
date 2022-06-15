@@ -69,3 +69,5 @@ app.use("/register", registerRouter);
 
 // loginAdmin
 app.use("/loginAdmin", loginAdminRouter);
+
+// NEED TO SET THE DATABASE AND VALIDATION FOR INSERT INTO DATABASE
