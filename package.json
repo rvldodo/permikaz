@@ -2,9 +2,10 @@
   "name": "permikaz-data",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "nodemon app",
+    "build": "parcel /views"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "parcel": "^2.6.0",
+    "parcel-transformer-ejs": "^1.0.0"
   }
 }
