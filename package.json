@@ -4,8 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app",
-    "build": "parcel /views"
+    "start": "nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -28,8 +27,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
-    "parcel": "^2.6.0",
-    "parcel-transformer-ejs": "^1.0.0"
+    "nodemon": "^2.0.16"
   }
 }
