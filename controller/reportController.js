@@ -1,4 +1,5 @@
 const { v4: uuid } = require("uuid");
+const validator = require("validator");
 
 const pool = require("../db/db");
 
@@ -19,6 +20,17 @@ const postController = async (req, res) => {
       passportNumber,
       year,
     } = req.body;
+
+    // Email check
+    if (email) {
+      if (!validator.isEmail(email)) {
+        console.log("Email not valid");
+      }
+      res.redirect("/report");
+      return false;
+    }
+
+    // Insert data into DB
     await pool.query(
       "INSERT INTO permikaz_data (_id, first_name, last_name, email, phone_number, university, major, passport_number, study_year) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
       [
