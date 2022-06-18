@@ -1,5 +1,7 @@
 CREATE DATABASE permikaz;
 
+USE permikaz;
+
 CREATE TABLE permikaz_data(
     _id VARCHAR PRIMARY KEY,
     first_name VARCHAR(225),
