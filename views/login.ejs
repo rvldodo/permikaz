@@ -12,6 +12,18 @@
   <body>
     <%- include('./partials/nav.ejs') %>
     <div class="position-absolute top-50 start-50 translate-middle shadow p-3 mb-5 bg-body rounded w-50">
+      <ul style="list-style: none;" class="p-0">
+        <% if (messages.success_msg) { %>
+        <div class="alert alert-success" role="alert">
+          <%= messages.success_msg %>
+        </div>
+        <% } %>
+      </ul>
+      <ul style="list-style: none;" class="p-0">
+        <% if (messages.error) { %>
+        <div class="alert alert-danger" role="alert"><%= messages.error %></div>
+        <% } %>
+      </ul>
     <form action="/login" method="post">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Username</label>

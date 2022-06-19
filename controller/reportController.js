@@ -1,7 +1,7 @@
 const { v4: uuid } = require("uuid");
 const validator = require("validator");
 
-const pool = require("../db/db");
+const pool = require("../config/dbConfig");
 
 const renderFormController = (req, res) => {
   res.render("report");

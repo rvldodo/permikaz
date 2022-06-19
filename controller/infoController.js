@@ -1,4 +1,4 @@
-const pool = require("../db/db");
+const pool = require("../config/dbConfig");
 
 // show all data
 const renderShowDataController = async (req, res) => {

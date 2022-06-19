@@ -12,6 +12,12 @@
   <body>
     <%- include('./partials/nav.ejs') %>
     <div class="position-absolute top-50 start-50 translate-middle shadow p-3 mb-5 bg-body rounded w-50">
+      <ul style="list-style: none;" class="p-0">
+        <% if (typeof errors != "undefined") { %> <% errors.forEach(error => {
+        %>
+        <div class="alert alert-danger w-max" role="alert"><%= error.message %></div>
+        <% }) %> <% } %>
+      </ul>
         <form class="row g-3" action="/register" method="post">
             <div class="col-md-4">
               <label for="validationDefault01" class="form-label">First name</label>
@@ -37,7 +43,7 @@
               <input type="password" class="form-control" id="validationDefault03" required name="password2">
             </div>
             <div class="col-12 d-flex justify-content-between">
-              <button class="btn btn-primary" type="submit">Register</button>
+              <button class="btn btn-primary" type="submit" value="Register">Register</button>
               <span>Already register? <a href="/login">click here to login</a></span>
             </div>
           </form>

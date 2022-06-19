@@ -1,4 +1,4 @@
-const pool = require("../db/db");
+const pool = require("../config/dbConfig");
 
 const showDetailData = async (req, res) => {
   const { _id } = req.params;

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db/db");
+const pool = require("../config/dbConfig");
 const bcrypt = require("bcrypt");
 
 router.get("/", (req, res) => {
@@ -10,48 +10,53 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   const { firstName, lastName, username, password, password2 } = req.body;
 
-  try {
+  let errors = [];
+
+  // check if the user fill all the fields
+  if (!firstName || !lastName || !username || !password || !password2) {
+    errors.push({ message: "Please enter all fields" });
+  }
+
+  if (password.length < 6) {
+    //   check if the password is longer than 6 characters
+    errors.push({ message: "Password must be at least 6 characters" });
+  }
+
+  //   check if the password is match
+  if (password !== password2) {
+    errors.push({ message: "Password do not match" });
+  }
+
+  if (errors.length > 0) {
+    res.render("register", { errors });
+  } else {
     //hashing the password
     const hashPassword = await bcrypt.hash(password, 10);
 
-    // check duplicates
-    const dataFetch = await pool.query(
-      "SELECT * FROM user_permikaz WHERE user_name = $1",
-      [username]
+    // check if the username is exist
+    pool.query(
+      "SELECT * FROM user_permikaz WHERE username = $1",
+      [username],
+      (err, result) => {
+        if (err) throw err;
+
+        if (result.rows.length > 0) {
+          errors.push({ message: "Username already exist" });
+          res.render("register", { errors });
+        } else {
+          // insert data to user_permikaz DB
+          pool.query(
+            "INSERT INTO user_permikaz(first_name, last_name,  username, hash_password) VALUES($1, $2, $3, $4)",
+            [firstName, lastName, username, hashPassword],
+            (err, result) => {
+              if (err) throw err;
+              req.flash("success_msg", "You are now registered. Please login!");
+              res.redirect("/login");
+            }
+          );
+        }
+      }
     );
-    const duplicates = dataFetch.rows;
-
-    // check the duplicates
-    if (duplicates.length > 0) {
-      console.log("USER ALREADY EXISTS");
-      res.redirect("/register");
-      return;
-    }
-
-    // check the first and last name
-    if (
-      duplicates.first_name === firstName &&
-      duplicates.last_name === lastName
-    ) {
-      console.log("USER ALREADY EXISTS");
-      res.redirect("/register");
-      return;
-    }
-
-    // check the username
-    if (duplicates.user_name === username) {
-      console.log("USER ALREADY EXISTS");
-      res.redirect("/register");
-      return;
-    }
-
-    await pool.query(
-      "INSERT INTO user_permikaz (first_name, last_name, user_name, hash_password) VALUES ($1, $2, $3, $4)",
-      [firstName, lastName, username, hashPassword]
-    );
-    res.redirect("/login");
-  } catch (error) {
-    console.log(error);
   }
 });
 

@@ -1,6 +1,6 @@
-CREATE DATABASE permikaz;
+-- CREATE DATABASE permikaz;
 
-USE permikaz;
+-- USE permikaz;
 
 CREATE TABLE permikaz_data(
     _id VARCHAR PRIMARY KEY,
@@ -17,12 +17,15 @@ CREATE TABLE permikaz_data(
 CREATE TABLE user_permikaz(
     first_name VARCHAR(50),
     last_name VARCHAR(50),
-    user_name VARCHAR(50),
-    hash_password VARCHAR(225)
+    email VARCHAR(50),
+    username VARCHAR(50),
+    hash_password VARCHAR(225),
+    UNIQUE(email),
+    UNIQUE(username)
 );
 
 CREATE TABLE admin_permikaz(
-    user_name VARCHAR(50),
+    username VARCHAR(50),
     hash_password VARCHAR(225),
     token VARCHAR(100)
 );
