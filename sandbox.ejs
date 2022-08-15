@@ -1,0 +1,13 @@
+<!-- message if the user already or not registered -->
+<ul style="list-style: none" class="p-0">
+  <% if (messages.success_msg) { %>
+  <div class="alert alert-success" role="alert">
+    <%= messages.success_msg %>
+  </div>
+  <% } %>
+</ul>
+<ul style="list-style: none" class="p-0">
+  <% if (messages.error) { %>
+  <div class="alert alert-danger" role="alert"><%= messages.error %></div>
+  <% } %>
+</ul>

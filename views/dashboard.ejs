@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-image: url("/img/bg2.jpg");
+      background-attachment: fixed;
+      padding-top: 0;
+    }
+  </style>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container-carousel" style="height: 500%">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/img/register.jpg"
+              class="img-responsive"
+              alt="register"
+              width="100%"
+              height="mx-auto"
+            />
+
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Register yourself in PERMIKAZ</h1>
+                <p>
+                  If you study in Kazan register yourself right away so you can
+                  be part of us as PERMIKAZ
+                </p>
+                <p>
+                  <a class="btn btn-lg btn-primary" href="/register"
+                    >Register To Report</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/img/kazan3.jpg"
+              class="img-responsive"
+              alt="register"
+              width="100%"
+              height="100%"
+            />
+
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Visit Kazan?</h1>
+                <p>
+                  Everything you need to know about kazan is here. From uniques
+                  places, foods until step-by-step first time you come to Kazan.
+                  Download the guideline below.
+                </p>
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="http://drive.google.com/uc?export=download&id=1w1sxD7AZP9qFu8Pl-95PxM0FAFP23r9i"
+                  >Download</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/img/important-user.jpg"
+              class="img-responsive"
+              alt="register"
+              width="100%"
+              height="mx-auto"
+            />
+
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>Detail of Students</h1>
+                <p>
+                  Only few people who can access the information according to
+                  hierarchy in PERMIKAZ.
+                </p>
+                <p>
+                  <a class="btn btn-lg btn-primary" href="/loginAdmin">Login</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="container-marketing">
+      <div class="container marketing">
+        <div class="row featurette">
+          <div class="col-md-7 pl-10 text-light">
+            <h2 class="featurette-heading fw-normal lh-1">
+              Tatarstan Republic,
+              <span class="text-light">Russia</span>
+            </h2>
+            <p class="lead text-light">
+              Tatarstan, also called Tatariya, republic in the east-central part
+              of European Russia. The republic lies in the middle Volga River
+              basin around the confluence of the Volga and Kama rivers. Kazan
+              (q.v.) is the capital. The Volga flows north-south across the
+              western end of the republic, while the Kama, the Volga’s largest
+              tributary, forms a roughly east-west axis through the greater
+              part. The Vyatka and the Belaya rivers are major tributaries of
+              the Kama. Generally the relief is that of a low, rolling plain.
+              The area west of the Volga rises to 771 feet (235 m), representing
+              the extreme northern end of the Volga Upland. In the east the land
+              rises to the Urals foreland. The climate is continental, with
+              long, severe winters and hot summers. Annual rainfall is about
+              17–20 inches (420–510 mm), with a summer maximum.
+            </p>
+          </div>
+          <div class="col-md-5 pb-10">
+            <img
+              src="/img/kazan1.jpg"
+              class="img-responsive shadow"
+              alt="register"
+              width="mx-auto"
+              height="700"
+              x="50%"
+              y="50%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
