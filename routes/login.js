@@ -46,7 +46,7 @@ router.post("/", async (req, res) => {
       res.render("register", { errors });
       console.log(errors);
     } else {
-      await Users.create({
+      const user = await Users.create({
         first_name: firstName,
         last_name: lastName,
         username,
