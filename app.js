@@ -61,3 +61,6 @@ app.use("/report", require("./routes/report"));
 
 // login admin
 app.use("/admin", require("./routes/admin"));
+
+// info
+app.use("/info", require("./routes/info"));
