@@ -15,7 +15,7 @@
       <ul style="list-style: none;" class="p-0">
         <% if (typeof errors != "undefined") { %> <% errors.forEach(error => {
         %>
-        <div class="alert alert-danger w-max" role="alert"><%= error.message %></div>
+        <div class="alert alert-danger w-max" role="alert"><%= error.msg %></div>
         <% }) %> <% } %>
       </ul>
         <form class="row g-3" action="/register" method="post">

@@ -22,6 +22,14 @@ router.post("/", async (req, res) => {
 
   let errors = [];
   try {
+    // find duplicate
+    const duplicate = await UsersData.findOne({
+      where: { passport_number: passportNumber, last_name: lastName, email },
+    });
+    if (duplicate) {
+      errors.push({ msg: "User already report" });
+    }
+
     // validation
     if (
       !firstName ||

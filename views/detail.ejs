@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <style>
+    body {
+      background-image: url("/img/data-table.jpg");
+      background-attachment: fixed;
+      padding-top: 0;
+    }
+  </style>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div
+      class="container-details position-absolute top-50 start-50 translate-middle"
+    >
+      <div class="card" style="width: 25rem; height: 30rem" action="/info">
+        <div class="card-body">
+          <h2 class="card-title"><%= data.first_name %></h2>
+          <h3 class="card-subtitle mb-2 text-muted"><%= data.last_name %></h3>
+          <div class="d-flex flex-row pt-3 justify-content-between">
+            <h5>Email</h5>
+            <span><%= data.email %></span>
+          </div>
+          <div class="d-flex flex-row pt-3 justify-content-between">
+            <h5>Phone Number</h5>
+            <span><%= data.phone_number %></span>
+          </div>
+          <div class="d-flex flex-row pt-3 justify-content-between">
+            <h5>University</h5>
+            <span><%= data.university %></span>
+          </div>
+          <div class="d-flex flex-row pt-3 justify-content-between">
+            <h5>Major</h5>
+            <span><%= data.major %></span>
+          </div>
+          <div class="d-flex flex-row pt-3 justify-content-between">
+            <h5>Passport Number</h5>
+            <span><%= data.passport_number%></span>
+          </div>
+          <div class="d-flex flex-row pt-3 justify-content-between">
+            <h5>Year</h5>
+            <span><%= data.study_year %></span>
+          </div>
+          <div class="d-flex flex-row pt-3 justify-content-between">
+            <a href="/info"
+              ><button type="button" class="btn btn-secondary">Back</button></a
+            >
+            <a href="/update/<%= data._id %>" data-method="post"
+              ><button type="button" class="btn btn-primary">Update</button></a
+            >
+            <a href="/detail/delete/<%= data.uuid %>" data-method="delete"
+              ><button
+                type="button"
+                class="delete-btn btn btn-danger"
+                onclick="alert('Are you sure?')"
+              >
+                Delete
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

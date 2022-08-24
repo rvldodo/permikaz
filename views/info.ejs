@@ -38,8 +38,8 @@
             <td><%= data[i].last_name %></td>
             <td><%= data[i].university %></td>
             <td><%= data[i].major %></td>
-            <td><%= data[i].study_year %></td>
-            <td><a href="/detail/<%= data[i]._id %>"><button type="button" class="btn btn-success badge" action="/detail">Details</button></a></td>
+            <td><%= data[i].year %></td>
+            <td><a href="/info/detail/<%= data[i].uuid %>"><button type="button" class="btn btn-success badge" action="/detail">Details</button></a></td>
           </tr>
           <% } %>
         </tbody>
